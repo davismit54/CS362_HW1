@@ -129,6 +129,16 @@ class TestCCValidator(unittest.TestCase):
 		card_num = "04372072049275895"
 		self.assertFalse(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
 
+	def test23(self):
+		"""Error guessing of lots of zeros for checksum (valid)"""
+		card_num = "4000000000000002"
+		self.assertTrue(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
+	
+	def test24(self):
+		"""Error guessing crazy length (invalid)"""
+		card_num = "293847592837458972349578298345789237458972938457923847598273495872934875928347592734589724395729384579823745982734598273458972938457928347598237"
+		self.assertFalse(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
+
 
 if __name__ == '__main__':
 	unittest.main(verbosity=2)
