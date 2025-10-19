@@ -196,7 +196,7 @@ def test32(self):
 		"""Partition test with Amex prefix edge case of 34 (valid)
 		with invalid checksum"""
 		card_num = "349478209483921"
-		self.assertTrue(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
+		self.assertFalse(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
 
 def test33(self):
 		"""Partition test with Amex prefix edge case of 35 (invalid)
@@ -214,7 +214,7 @@ def test35(self):
 		"""Partition test with Amex prefix edge case of 37 (valid)
 		with invalid checksum"""
 		card_num = "349478209483920"
-		self.assertTrue(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
+		self.assertFalse(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
 
 def test36(self):
 		"""Partition test with Amex prefix edge case of 38 (invalid)
@@ -232,13 +232,13 @@ def test38(self):
 		"""Partition test with MC prefix edge case of 51 (valid)
 		with invalid checksum"""
 		card_num = "5148202485492033"
-		self.assertTrue(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
+		self.assertFalse(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
 
 def test39(self):
 		"""Partition test with MC prefix edge case of 55 (valid)
 		with invalid checksum"""
 		card_num = "5548202485492036"
-		self.assertTrue(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
+		self.assertFalse(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
 
 def test40(self):
 		"""Partition test with MC prefix edge case of 56 (invalid)
@@ -256,13 +256,15 @@ def test42(self):
 		"""Partition test with MC prefix edge case of 2221 (valid)
 		with invalid checksum"""
 		card_num = "2221374380240492"
-		self.assertTrue(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
+		self.assertFalse(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
 	
 def test43(self):
 		"""Partition test with MC prefix edge case of 2720 (valid)
 		with invalid checksum"""
 		card_num = "2720239484058345"
-		self.assertTrue(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
+		self.assertFalse(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
+
+
 
 
 
