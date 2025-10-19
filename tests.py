@@ -114,5 +114,21 @@ class TestCCValidator(unittest.TestCase):
 		card_num = "27203794720574835"
 		self.assertFalse(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
 
+	def test20(self):
+		"""Boundary Test for Visa length of 15 (invalid)"""
+		card_num = "458303729492459"
+		self.assertFalse(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
+
+	def test21(self):
+		"""Boundary Test for Visa length of 17 (invalid)"""
+		card_num = "45830372949243335"
+		self.assertFalse(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
+
+	def test22(self):
+		"""Error guess of valid entry plus a leading zero (invalid)"""
+		card_num = "04372072049275895"
+		self.assertFalse(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
+
+
 if __name__ == '__main__':
 	unittest.main(verbosity=2)
