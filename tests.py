@@ -38,6 +38,54 @@ class TestCCValidator(unittest.TestCase):
 		card_num = "381235769370231"
 		self.assertFalse(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
 
+	def test8(self):
+		"""Boundary test with MC prefix edge case of 50 (invalid)"""
+		card_num = "5038927492018394"
+		self.assertFalse(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
+
+	def test9(self):
+		"""Boundary test with MC prefix edge case of 51 (valid)"""
+		card_num = "5148202485492031"
+		self.assertTrue(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
+
+	def test9(self):
+		"""Boundary test with MC prefix edge case of 55 (valid)"""
+		card_num = "5548202485492037"
+		self.assertTrue(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
+
+	def test10(self):
+		"""Boundary test with MC prefix edge case of 56 (invalid)"""
+		card_num = "5628304849036147"
+		self.assertFalse(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
+
+	def test11(self):
+		"""Boundary test with MC prefix edge case of 2220 (invalid)"""
+		card_num = "2220374591275499"
+		self.assertFalse(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
+
+	def test12(self):
+		"""Boundary test with MC prefix edge case of 2221 (valid)"""
+		card_num = "2221374380240497"
+		self.assertTrue(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
+	
+	def test12(self):
+		"""Boundary test with MC prefix edge case of 2720 (valid)"""
+		card_num = "2720239484058341"
+		self.assertTrue(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
+
+	def test13(self):
+		"""Boundary test with MC prefix edge case of 2721 (invalid)"""
+		card_num = "2721384027592346"
+		self.assertFalse(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
+	
+	def test14(self):
+		"""Boundary test with Visa prefix edge case of 4 (valid)
+		Amex and MC tests include 3 and 5, so no more needed"""
+		card_num = "4370275028493452"
+		self.assertTrue(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
+
+	
+
 
 
 if __name__ == '__main__':
