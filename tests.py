@@ -84,9 +84,35 @@ class TestCCValidator(unittest.TestCase):
 		card_num = "4370275028493452"
 		self.assertTrue(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
 
+	def test14(self):
+		"""Length of 0 test for error guessing (invalid)"""
+		card_num = ""
+		self.assertFalse(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
 	
+	def test15(self):
+		"""only 0s test for error guessing (invalid)"""
+		card_num = "0000000000000000"
+		self.assertFalse(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
+	
+	def test16(self):
+		"""Boundary Test for Amex length of 14 (invalid)"""
+		card_num = "34193280402846"
+		self.assertFalse(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
+	
+	def test17(self):
+		"""Boundary Test for Amex length of 16 (invalid)"""
+		card_num = "3719328040284342"
+		self.assertFalse(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
 
+	def test18(self):
+		"""Boundary Test for MC length of 15 (invalid)"""
+		card_num = "513802792754045"
+		self.assertFalse(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
 
+	def test19(self):
+		"""Boundary Test for MC length of 17 (invalid)"""
+		card_num = "27203794720574835"
+		self.assertFalse(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
 
 if __name__ == '__main__':
 	unittest.main(verbosity=2)
