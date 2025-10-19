@@ -14,14 +14,31 @@ class TestCCValidator(unittest.TestCase):
 		self.assertFalse(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
 
 	def test3(self):
+		"""Boundary test with Amex prefix edge case of 34 (valid)"""
+		card_num = "349478209483922"
+		self.assertTrue(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
+
+	def test4(self):
+		"""Boundary test with Amex prefix edge case of 35 (invalid)"""
+		card_num = "359028684920562"
+		self.assertFalse(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
+
+	def test5(self):
+		"""Boundary test with Amex prefix edge case of 36 (invalid)"""
+		card_num = "363920384502480"
+		self.assertFalse(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
+
+	def test6(self):
+		"""Boundary test with Amex prefix edge case of 37 (valid)"""
+		card_num = "349478209483922"
+		self.assertTrue(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
+
+	def test7(self):
 		"""Boundary test with Amex prefix edge case of 38 (invalid)"""
 		card_num = "381235769370231"
 		self.assertFalse(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
 
-	def test4(self):
-		"""Boundary test with Amex prefix edge case of 34 (valid)"""
-		card_num = "349478209483922"
-		self.assertTrue(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
+
 
 if __name__ == '__main__':
 	unittest.main(verbosity=2)
