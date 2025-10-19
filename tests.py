@@ -139,6 +139,36 @@ class TestCCValidator(unittest.TestCase):
 		card_num = "293847592837458972349578298345789237458972938457923847598273495872934875928347592734589724395729384579823745982734598273458972938457928347598237"
 		self.assertFalse(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
 
+	def test25(self):
+		"""Boundary check, incorrect checksum Visa (invalid)"""
+		card_num = "4565798658765787" #checksum should be 8
+		self.assertFalse(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
+	
+	def test26(self):
+		"""Boundary check, incorrect checksum Visa (invalid)"""
+		card_num = "4565798658765789" #checksum should be 8
+		self.assertFalse(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
+
+	def test27(self):
+		"""Boundary check, incorrect checksum MC (invalid)"""
+		card_num = "5537029402384043" #checksum should be 4
+		self.assertFalse(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
+	
+	def test28(self):
+		"""Boundary check, incorrect checksum MC (invalid)"""
+		card_num = "5537029402384045" #checksum should be 4
+		self.assertFalse(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
+
+	def test29(self):
+		"""Boundary check, incorrect checksum Amex (invalid)"""
+		card_num = "372904820489328" #checksum should be 9
+		self.assertFalse(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
+	
+	def test30(self):
+		"""Boundary check, incorrect checksum Amex (invalid)"""
+		card_num = "372904820489320" #checksum should be 9
+		self.assertFalse(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
+
 
 if __name__ == '__main__':
 	unittest.main(verbosity=2)
