@@ -285,7 +285,15 @@ class TestCCValidator(unittest.TestCase):
 		card_num = "0412480275930242"
 		self.assertFalse(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
 
+	def test47(self):
+		"""Error guessing: checksum weakness - twin error on MC prefix"""
+		card_num = "2258937894038494"
+		self.assertFalse(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
 
+	def test48(self):
+		"""Error guessing: checksum weakness - twin error on MC prefix"""
+		card_num = "2551567647968855"
+		self.assertFalse(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
 
 
 if __name__ == '__main__':
