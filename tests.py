@@ -448,6 +448,15 @@ class TestCCValidator(unittest.TestCase):
         self.assertFalse(credit_card_validator(card_num),
                          msg='credit_card_validator({})'.format(card_num),)
 
+    def test55(self):
+        """Partition Test for MC length of 16 (valid).
+
+        with twin error checksum
+        """
+        card_num = "5555555555555557"
+        self.assertFalse(credit_card_validator(card_num),
+                         msg='credit_card_validator({})'.format(card_num),)
+
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
