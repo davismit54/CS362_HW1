@@ -279,7 +279,7 @@ class TestCCValidator(unittest.TestCase):
 		card_num = "004372072049275895"
 		self.assertFalse(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
 
-	def test46(self):
+	def test46a(self):
 		"""Partition test of length and checksum error
 		Correct length, correct checksum, incorrect prefix caused by leading 0"""
 		card_num = "0412480275930242"
@@ -294,6 +294,43 @@ class TestCCValidator(unittest.TestCase):
 		"""Error guessing: checksum weakness - twin error on MC prefix"""
 		card_num = "2551567647968855"
 		self.assertFalse(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
+
+	def test49(self):
+		"""Partition Test for Amex length of 14 (invalid)
+		with incorrect checksum"""
+		card_num = "34193280402845"
+		self.assertFalse(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
+	
+	def test50(self):
+		"""Partition Test for Amex length of 16 (invalid)
+		with incorrect checksum"""
+		card_num = "3719328040284343"
+		self.assertFalse(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
+
+	def test51(self):
+		"""Partition Test for MC length of 15 (invalid)
+		with incorrect checksum"""
+		card_num = "513802792754042"
+		self.assertFalse(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
+
+	def test52(self):
+		"""Partition Test for MC length of 17 (invalid)
+		with incorrect checksum"""
+		card_num = "27203794720574836"
+		self.assertFalse(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
+
+	def test53(self):
+		"""Partition Test for Visa length of 15 (invalid)
+		with incorrect checksum"""
+		card_num = "458303729492453"
+		self.assertFalse(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
+
+	def test54(self):
+		"""Partition Test for Visa length of 17 (invalid)
+		with incorrect checksum"""
+		card_num = "45830372949243332"
+		self.assertFalse(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
+
 
 
 if __name__ == '__main__':
