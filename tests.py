@@ -219,7 +219,6 @@ class TestCCValidator(unittest.TestCase):
         self.assertFalse(credit_card_validator(card_num),
                          msg='credit_card_validator({})'.format(card_num),)
 
-
     """Got bugs 1-8 and 10, need #9.
 
     Starting Partition Testing for corner cases
