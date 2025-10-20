@@ -461,7 +461,7 @@ class TestCCValidator(unittest.TestCase):
         """Partition test for MC length and incorrect checksum."""
         card_num = "272046878963798656"
         self.assertFalse(credit_card_validator(card_num),
-                        msg='credit_card_validator({})'.format(card_num),)
+                         msg='credit_card_validator({})'.format(card_num),)
 
     def test57(self):
         """Partition test with Amex prefix edge case of 33.
@@ -496,8 +496,8 @@ class TestCCValidator(unittest.TestCase):
         with invalid length 16
         """
         card_num = "3423489027840253"
-        self.assertTrue(credit_card_validator(card_num),
-                        msg='credit_card_validator({})'.format(card_num),)
+        self.assertFalse(credit_card_validator(card_num),
+                         msg='credit_card_validator({})'.format(card_num),)
 
     def test59(self):
         """Partition test with Amex prefix edge case of 35.
