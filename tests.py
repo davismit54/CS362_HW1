@@ -241,7 +241,7 @@ class TestCCValidator(unittest.TestCase):
 
     def test31(self):
         """Partition test with Amex prefix edge case of 33 (invalid).
-        
+
         with invalid checksum
         """
         card_num = "3312312312312316"
@@ -249,8 +249,8 @@ class TestCCValidator(unittest.TestCase):
                          msg='credit_card_validator({})'.format(card_num),)
 
     def test32(self):
-        """Partition test with Amex prefix edge case of 34 (valid). 
-        
+        """Partition test with Amex prefix edge case of 34 (valid).
+
         with invalid checksum
         """
         card_num = "349478209483921"
@@ -258,7 +258,7 @@ class TestCCValidator(unittest.TestCase):
                          msg='credit_card_validator({})'.format(card_num),)
 
     def test33(self):
-        """Partition test with Amex prefix edge case of 35 (invalid). 
+        """Partition test with Amex prefix edge case of 35 (invalid).
 
         with invalid checksum
         """
@@ -267,7 +267,7 @@ class TestCCValidator(unittest.TestCase):
                          msg='credit_card_validator({})'.format(card_num),)
 
     def test34(self):
-        """Partition test with Amex prefix edge case of 36 (invalid). 
+        """Partition test with Amex prefix edge case of 36 (invalid).
 
         with invalid checksum
         """
@@ -276,7 +276,7 @@ class TestCCValidator(unittest.TestCase):
                          msg='credit_card_validator({})'.format(card_num),)
 
     def test35(self):
-        """Partition test with Amex prefix edge case of 37 (valid). 
+        """Partition test with Amex prefix edge case of 37 (valid).
 
         with invalid checksum
         """
@@ -294,7 +294,7 @@ class TestCCValidator(unittest.TestCase):
                          msg='credit_card_validator({})'.format(card_num),)
 
     def test37(self):
-        """Partition test with MC prefix edge case of 50 (invalid). 
+        """Partition test with MC prefix edge case of 50 (invalid).
 
         with invalid checksum
         """
@@ -303,7 +303,7 @@ class TestCCValidator(unittest.TestCase):
                          msg='credit_card_validator({})'.format(card_num),)
 
     def test38(self):
-        """Partition test with MC prefix edge case of 51 (valid). 
+        """Partition test with MC prefix edge case of 51 (valid).
 
         with invalid checksum
         """
@@ -312,7 +312,7 @@ class TestCCValidator(unittest.TestCase):
                          msg='credit_card_validator({})'.format(card_num),)
 
     def test39(self):
-        """Partition test with MC prefix edge case of 55 (valid). 
+        """Partition test with MC prefix edge case of 55 (valid).
 
         with invalid checksum
         """
@@ -321,7 +321,7 @@ class TestCCValidator(unittest.TestCase):
                          msg='credit_card_validator({})'.format(card_num),)
 
     def test40(self):
-        """Partition test with MC prefix edge case of 56 (invalid). 
+        """Partition test with MC prefix edge case of 56 (invalid).
 
         with invalid checksum
         """
@@ -330,7 +330,7 @@ class TestCCValidator(unittest.TestCase):
                          msg='credit_card_validator({})'.format(card_num),)
 
     def test41(self):
-        """Partition test with MC prefix edge case of 2220 (invalid). 
+        """Partition test with MC prefix edge case of 2220 (invalid).
 
         with invalid checksum
         """
@@ -339,7 +339,7 @@ class TestCCValidator(unittest.TestCase):
                          msg='credit_card_validator({})'.format(card_num),)
 
     def test42(self):
-        """Partition test with MC prefix edge case of 2221 (valid). 
+        """Partition test with MC prefix edge case of 2221 (valid).
 
         with invalid checksum
         """
@@ -348,7 +348,7 @@ class TestCCValidator(unittest.TestCase):
                          msg='credit_card_validator({})'.format(card_num),)
 
     def test43(self):
-        """Partition test with MC prefix edge case of 2720 (valid). 
+        """Partition test with MC prefix edge case of 2720 (valid).
 
         with invalid checksum
         """
@@ -360,7 +360,7 @@ class TestCCValidator(unittest.TestCase):
         """Partition test with length and checksum errors."""
         card_num = "00"
         self.assertFalse(credit_card_validator(card_num),
-                         msg='credit_card_validator({})'.format(card_num),)    
+                         msg='credit_card_validator({})'.format(card_num),)
 
     def test45(self):
         """Partition test with length and checksum errors."""
@@ -423,7 +423,7 @@ class TestCCValidator(unittest.TestCase):
                          msg='credit_card_validator({})'.format(card_num),)
 
     def test52(self):
-        """Partition Test for MC length of 17 (invalid). 
+        """Partition Test for MC length of 17 (invalid).
 
         with incorrect checksum
         """
@@ -432,7 +432,7 @@ class TestCCValidator(unittest.TestCase):
                          msg='credit_card_validator({})'.format(card_num),)
 
     def test53(self):
-        """Partition Test for Visa length of 15 (invalid). 
+        """Partition Test for Visa length of 15 (invalid).
 
         with incorrect checksum
         """
@@ -441,7 +441,7 @@ class TestCCValidator(unittest.TestCase):
                          msg='credit_card_validator({})'.format(card_num),)
 
     def test54(self):
-        """Partition Test for Visa length of 17 (invalid). 
+        """Partition Test for Visa length of 17 (invalid).
 
         with incorrect checksum
         """
