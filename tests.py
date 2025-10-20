@@ -279,6 +279,14 @@ class TestCCValidator(unittest.TestCase):
 		card_num = "004372072049275895"
 		self.assertFalse(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
 
+	def test46(self):
+		"""Partition test of length and checksum error
+		Correct length, correct checksum, incorrect prefix caused by leading 0"""
+		card_num = "0412480275930242"
+		self.assertFalse(credit_card_validator(card_num), msg='credit_card_validator({})'.format(card_num),)
+
+
+
 
 if __name__ == '__main__':
 	unittest.main(verbosity=2)
