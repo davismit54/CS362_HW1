@@ -463,5 +463,258 @@ class TestCCValidator(unittest.TestCase):
         self.assertFalse(credit_card_validator(card_num),
                         msg='credit_card_validator({})'.format(card_num),)
 
+    def test57(self):
+        """Partition test with Amex prefix edge case of 33.
+
+        with invalid length of 14
+        """
+        card_num = "33489204038489"
+        self.assertFalse(credit_card_validator(card_num),
+                         msg='credit_card_validator({})'.format(card_num),)
+
+    def test57a(self):
+        """Partition test with Amex prefix edge case of 33.
+
+        with invalid length of 16
+        """
+        card_num = "3348920403848348"
+        self.assertFalse(credit_card_validator(card_num),
+                         msg='credit_card_validator({})'.format(card_num),)
+
+    def test58(self):
+        """Partition test with Amex prefix edge case of 34.
+
+        with invalid length 14
+        """
+        card_num = "34234890278406"
+        self.assertFalse(credit_card_validator(card_num),
+                         msg='credit_card_validator({})'.format(card_num),)
+
+    def test58a(self):
+        """Partition test with Amex prefix edge case of 34.
+
+        with invalid length 16
+        """
+        card_num = "3423489027840253"
+        self.assertTrue(credit_card_validator(card_num),
+                        msg='credit_card_validator({})'.format(card_num),)
+
+    def test59(self):
+        """Partition test with Amex prefix edge case of 35.
+
+        with invalid lenth 14
+        """
+        card_num = "35280488049351"
+        self.assertFalse(credit_card_validator(card_num),
+                         msg='credit_card_validator({})'.format(card_num),)
+
+    def test59a(self):
+        """Partition test with Amex prefix edge case of 35.
+
+        with invalid lenth 16
+        """
+        card_num = "3528047204325540"
+        self.assertFalse(credit_card_validator(card_num),
+                         msg='credit_card_validator({})'.format(card_num),)
+
+    def test60(self):
+        """Partition test with Amex prefix edge case of 36.
+
+        with invalid length 14
+        """
+        card_num = "36234523452558"
+        self.assertFalse(credit_card_validator(card_num),
+                         msg='credit_card_validator({})'.format(card_num),)
+
+    def test60a(self):
+        """Partition test with Amex prefix edge case of 36.
+
+        with invalid length 16
+        """
+        card_num = "3623452345245561"
+        self.assertFalse(credit_card_validator(card_num),
+                         msg='credit_card_validator({})'.format(card_num),)
+
+    def test61(self):
+        """Partition test with Amex prefix edge case of 37.
+
+        with invalid length 14
+        """
+        card_num = "37420743039205"
+        self.assertFalse(credit_card_validator(card_num),
+                         msg='credit_card_validator({})'.format(card_num),)
+
+    def test61a(self):
+        """Partition test with Amex prefix edge case of 37.
+
+        with invalid length 16
+        """
+        card_num = "3742074303923405"
+        self.assertFalse(credit_card_validator(card_num),
+                         msg='credit_card_validator({})'.format(card_num),)
+
+    def test62(self):
+        """Partition test with Amex prefix edge case of 38.
+
+        with invalid length 14
+        """
+        card_num = "38420734256809"
+        self.assertFalse(credit_card_validator(card_num),
+                         msg='credit_card_validator({})'.format(card_num),)
+
+    def test62a(self):
+        """Partition test with Amex prefix edge case of 38.
+
+        with invalid length 16
+        """
+        card_num = "3842073442568609"
+        self.assertFalse(credit_card_validator(card_num),
+                         msg='credit_card_validator({})'.format(card_num),)
+
+    def test63(self):
+        """Partition test with MC prefix edge case of 50.
+
+        with invalid length 15
+        """
+        card_num = "503802740829347"
+        self.assertFalse(credit_card_validator(card_num),
+                         msg='credit_card_validator({})'.format(card_num),)
+
+    def test63a(self):
+        """Partition test with MC prefix edge case of 50.
+
+        with invalid length 17
+        """
+        card_num = "50380274308293451"
+        self.assertFalse(credit_card_validator(card_num),
+                         msg='credit_card_validator({})'.format(card_num),)
+
+    def test64(self):
+        """Partition test with MC prefix edge case of 51.
+
+        with invalid length 15
+        """
+        card_num = "513384028593026"
+        self.assertFalse(credit_card_validator(card_num),
+                         msg='credit_card_validator({})'.format(card_num),)
+
+    def test64a(self):
+        """Partition test with MC prefix edge case of 51.
+
+        with invalid length 17
+        """
+        card_num = "51338402859302386"
+        self.assertFalse(credit_card_validator(card_num),
+                         msg='credit_card_validator({})'.format(card_num),)
+
+    def test65(self):
+        """Partition test with MC prefix edge case of 55.
+
+        with invalid length 15
+        """
+        card_num = "553802740289145"
+        self.assertFalse(credit_card_validator(card_num),
+                         msg='credit_card_validator({})'.format(card_num),)
+
+    def test65a(self):
+        """Partition test with MC prefix edge case of 55.
+
+        with invalid length 17
+        """
+        card_num = "55380274023891448"
+        self.assertFalse(credit_card_validator(card_num),
+                         msg='credit_card_validator({})'.format(card_num),)
+
+    def test66(self):
+        """Partition test with MC prefix edge case of 56.
+
+        with invalid length 15
+        """
+        card_num = "563790402748995"
+        self.assertFalse(credit_card_validator(card_num),
+                         msg='credit_card_validator({})'.format(card_num),)
+
+    def test66a(self):
+        """Partition test with MC prefix edge case of 56.
+
+        with invalid length 17
+        """
+        card_num = "56379304027485995"
+        self.assertFalse(credit_card_validator(card_num),
+                         msg='credit_card_validator({})'.format(card_num),)
+
+    def test67(self):
+        """Partition test with MC prefix edge case of 2220.
+
+        with invalid length 15
+        """
+        card_num = "222038047204930"
+        self.assertFalse(credit_card_validator(card_num),
+                         msg='credit_card_validator({})'.format(card_num),)
+
+    def test67a(self):
+        """Partition test with MC prefix edge case of 2220.
+
+        with invalid length 17
+        """
+        card_num = "22203804720349343"
+        self.assertFalse(credit_card_validator(card_num),
+                         msg='credit_card_validator({})'.format(card_num),)
+
+    def test68(self):
+        """Partition test with MC prefix edge case of 2221.
+
+        with invalid length 15
+        """
+        card_num = "222134290349348"
+        self.assertFalse(credit_card_validator(card_num),
+                         msg='credit_card_validator({})'.format(card_num),)
+
+    def test68a(self):
+        """Partition test with MC prefix edge case of 2221.
+
+        with invalid length 17
+        """
+        card_num = "22213429034934321"
+        self.assertFalse(credit_card_validator(card_num),
+                         msg='credit_card_validator({})'.format(card_num),)
+
+    def test69(self):
+        """Partition test with MC prefix edge case of 2720.
+
+        with invalid length 15
+        """
+        card_num = "272037204830288"
+        self.assertFalse(credit_card_validator(card_num),
+                         msg='credit_card_validator({})'.format(card_num),)
+
+    def test69a(self):
+        """Partition test with Visa prefix edge case of 2720.
+
+        with invalid length 17
+        """
+        card_num = "27203720483028354"
+        self.assertFalse(credit_card_validator(card_num),
+                         msg='credit_card_validator({})'.format(card_num),)
+
+    def test70(self):
+        """Partition test with Visa prefix edge case of 2721.
+
+        with invalid length 15
+        """
+        card_num = "272123423428359"
+        self.assertFalse(credit_card_validator(card_num),
+                         msg='credit_card_validator({})'.format(card_num),)
+
+    def test70a(self):
+        """Partition test with Visa prefix edge case of 2721.
+
+        with invalid length 17
+        """
+        card_num = "27212342342835389"
+        self.assertFalse(credit_card_validator(card_num),
+                         msg='credit_card_validator({})'.format(card_num),)
+
+
 if __name__ == '__main__':
     unittest.main(verbosity=2)
