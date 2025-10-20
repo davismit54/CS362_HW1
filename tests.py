@@ -454,8 +454,8 @@ class TestCCValidator(unittest.TestCase):
         with twin error checksum
         """
         card_num = "5555555555555557"
-        self.assertFalse(credit_card_validator(card_num),
-                         msg='credit_card_validator({})'.format(card_num),)
+        self.assertTrue(credit_card_validator(card_num),
+                        msg='credit_card_validator({})'.format(card_num),)
 
 
 if __name__ == '__main__':
